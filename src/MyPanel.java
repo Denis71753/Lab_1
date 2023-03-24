@@ -42,7 +42,6 @@ public class MyPanel extends JPanel {
 
         for (Rectangle rect:outlist){
             g.drawLine(rect.x,rect.y,rect.width,rect.height);
-
         }
      }
 }
