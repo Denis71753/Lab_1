@@ -11,18 +11,36 @@ public class MyPanel extends JPanel {
 
     int x = 100;
     int y = 100;
-    int width = 200;
-    int height = 200;
-    int delta = 10;
+    int width = 50;
+    int height = 100;
+    int step = 30;
+    int delta = 5;
     private final ArrayList<Rectangle> outlist = new ArrayList<>();
-    public void setSymbols(String ignoredParm){
-        segment(1);
-        segment(2);
-        segment(3);
-        segment(4);
-        segment(5);
-        segment(6);
-        segment(7);
+    public void setSymbols(String parm){
+        String[] arr = parm.replace( ",","").split( "");
+        for (String cifra:arr){
+            switch (cifra) {
+                case "1" -> {
+                    segment(2);
+                    segment(4);
+                }
+                case "2" -> {
+                    segment(1);
+                    segment(2);
+                    segment(3);
+                    segment(6);
+                    segment(5);
+                }
+                case "3" -> {
+                    segment(1);
+                    segment(2);
+                    segment(3);
+                    segment(4);
+                    segment(5);
+                }
+            }
+            x = x +step + width;
+        }
     }
     private void segment(int number){
         switch (number) {
@@ -31,7 +49,7 @@ public class MyPanel extends JPanel {
             case 3 -> outlist.add(new Rectangle(x + delta, y + height / 2, width - delta, y + height / 2));
             case 4 -> outlist.add(new Rectangle(width, y + (height / 2) + delta, width, y + height - delta));
             case 5 -> outlist.add(new Rectangle(x + delta, y + height, width - delta, y + height));
-            case 6 -> outlist.add(new Rectangle(x, y + (height / 2) + delta, x, y + (height / 2) - delta));
+            case 6 -> outlist.add(new Rectangle(x, y + (height / 2) + delta, x, y + height - delta));
             case 7 -> outlist.add(new Rectangle(x, y + delta, x, y + (height / 2) - delta));
         }
     }

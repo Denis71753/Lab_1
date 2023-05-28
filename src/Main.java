@@ -5,7 +5,7 @@ public class Main {
 
         System.out.println("Hello World");
 
-        JFrame f = new JFrame("");
+        JFrame f = new JFrame("Swing Paint Demo");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         MyPanel myPanel = new MyPanel();
         myPanel.repaint();
