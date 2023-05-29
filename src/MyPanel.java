@@ -1,7 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
-
 import java.util.ArrayList;
+
+
 
 public class MyPanel extends JPanel {
     public MyPanel() {
@@ -17,7 +18,7 @@ public class MyPanel extends JPanel {
     int width = 50;
     int height = 100;
     int step = 30;
-    int delta = 5;
+    int delta = 3;
     private final ArrayList<Rectangle> outlist = new ArrayList<>();
 
     public void setSymbols(String parm) {
@@ -50,9 +51,9 @@ public class MyPanel extends JPanel {
     private void segment(int number) {
         switch (number) {
             case 1 -> outlist.add(new Rectangle(x + delta, y, x + width - delta, y));
-            case 2 -> outlist.add(new Rectangle( x + width, y + delta, x + width, y + (height / 2) - delta));
+            case 2 -> outlist.add(new Rectangle(x + width, y + delta, x + width, y + (height / 2) - delta));
             case 3 -> outlist.add(new Rectangle(x + delta, y + height / 2, x + width - delta, y + height / 2));
-            case 4 -> outlist.add(new Rectangle(x + width, y + (height / 2) + delta,x +  width, y + height - delta));
+            case 4 -> outlist.add(new Rectangle(x + width, y + (height / 2) + delta, x + width, y + height - delta));
             case 5 -> outlist.add(new Rectangle(x + delta, y + height, x + width - delta, y + height));
             case 6 -> outlist.add(new Rectangle(x, y + (height / 2) + delta, x, y + height - delta));
             case 7 -> outlist.add(new Rectangle(x, y + delta, x, y + (height / 2) - delta));
@@ -68,7 +69,29 @@ public class MyPanel extends JPanel {
 
         }
     }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public void setStep(int step) {
+        this.step = step;
+    }
 }
+
 
 
 
